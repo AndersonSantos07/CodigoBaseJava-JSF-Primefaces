@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Primeira Página</title>
+
+</h:head>
+
+
+<h:body>
+
+	<h:form id="formPagina">
+
+		<h1>Primeira Página!</h1>
+
+		<br />
+
+		<h:outputLabel for="idInput" value="Id: " />
+		<h:inputText id="idInput" value="#{pessoaBean.pessoa.id}"
+			readonly="true" />
+
+		<br />
+		<br />
+
+		<h:outputLabel for="nomeInput" value="Nome:" />
+		<h:inputText id="nomeInput" value="#{pessoaBean.pessoa.nome}" />
+
+		<br />
+		<br />
+
+		<h:outputLabel for="sobreNomeInput" value="SobreNome:" />
+		<h:inputText id="sobreNomeInput"
+			value="#{pessoaBean.pessoa.sobrenome}" />
+
+		<br />
+		<br />
+
+		<h:outputLabel for="idadeInput" value="Idade:" />
+		<h:inputText id="idadeInput" value="#{pessoaBean.pessoa.idade}" />
+
+		<br />
+		<br />
+
+		<h:commandButton value="Novo" action="#{pessoaBean.novo}" />
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+		<h:commandButton value="Remove ID" action="#{pessoaBean.deletePorId}" />
+		<h:commandButton value="Remove" action="#{pessoaBean.remove}" />
+
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+
+			<h:column>
+				<h:outputText value="#{pessoa.id}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{pessoa.nome}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{pessoa.sobrenome}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{pessoa.idade}" />
+			</h:column>
+
+
+		</h:dataTable>
+
+
+	</h:form>
+
+</h:body>
+
+
+</html>
